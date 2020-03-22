@@ -1,3 +1,4 @@
+import 'package:bmicalculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
@@ -13,13 +14,7 @@ class IconContent extends StatelessWidget {
       children: <Widget>[
         Icon(icon, size: 80),
         SizedBox(height: 15),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 18,
-            color: Color(0xFF8D8E98),
-          ),
-        )
+        Text(label, style: kLabelTextStyle)
       ],
     );
   }

@@ -17,7 +17,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender;
+  Gender? selectedGender;
   int height = 180;
   int weight = 60;
   int age = 20;
@@ -86,16 +86,18 @@ class _InputPageState extends State<InputPage> {
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
-                        thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 15),
-                        overlayShape:
-                            RoundSliderOverlayShape(overlayRadius: 25)),
+                      thumbShape:
+                          const RoundSliderThumbShape(enabledThumbRadius: 15),
+                      overlayShape:
+                          const RoundSliderOverlayShape(overlayRadius: 25),
+                      activeTrackColor: const Color(0xFFEB1555),
+                      inactiveTrackColor: const Color(0xFF8D8E98),
+                      thumbColor: const Color(0xFFEB1555),
+                    ),
                     child: Slider(
                       value: height.toDouble(),
                       min: 120,
                       max: 220,
-                      activeColor: Color(0xFFEB1555),
-                      inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue) {
                         setState(() {
                           height = newValue.round();
